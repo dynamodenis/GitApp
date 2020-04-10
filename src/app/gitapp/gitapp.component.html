@@ -3,7 +3,7 @@
         <h1>GitApp.</h1>
         <p>Simple is productive.</p>
     </div>
-    <div class="container">
+    <div class="container" [style.height]="'auto'">
         <div [ngStyle]='body'>
             GitApp is a user friendly application that enables a user to 
             fetch their github usernames and their respective repositories.
@@ -11,25 +11,31 @@
             as authentication. The application help ease of accessing repositories
             to different developers world wide. Feel free to use the application.
         </div>
-        <div class='container'>
-            <form action=""  class="row">
-                <div class="col-md-6">
+        <div class='row' [ngStyle]='form' >
+            <form action=""  class="col-md-6" [formGroup]='username' (ngSubmit)='nameSubmit()'>
+                <div  >
                     <label for="name">Type Github Username:</label><br>
-                    <input type="text" placeholder="Username..."><br>
-                    <button type="button" class="btn btn-success">Submit</button>
-                </div>
-                <div class="col-md-6">
-                    <label for="repo">Search Repository</label><br>
-                    <input type="text" placeholder="Repository.."><br>
-                    <button type="button" class="btn btn-success">Search</button>
+                    <input class="form-control" type="text" placeholder="Username..." formControlName='user'><br>
+                    <button type="submit" class="btn btn-success">Submit</button>
                 </div>
             </form>
+            <form action="" [formGroup]='repositories' class="col-md-6" (ngSubmit)='repoSubmit()'>
+                <div  >
+                    <label for="repo">Search Repository</label><br>
+                    <input class="form-control" type="text" placeholder="Repository.." formControlName='repository'><br>
+                    <button type="submit" class="btn btn-success">Search</button>
+                </div>
+            </form>
+            
         </div>
     </div>
+    <br>
+   <div>
     <footer [ngStyle]="footer">
-            <p>Developed by: Denis Mbugua.</p>
-            <p>Location: Nairobi,Kenya.</p>
-            <p>Email: dmbugua66@gmail.com</p>
-            <p>&copy;2020</p>
-     </footer>
+        <p>Developed by: Denis Mbugua.</p>
+        <p>Location: Nairobi,Kenya.</p>
+        <p>Email: dmbugua66@gmail.com</p>
+        <p>&copy;2020</p>
+ </footer>
+   </div>
 </body>
