@@ -11,7 +11,7 @@ export class GitappComponent implements OnInit {
   constructor(private api:GithubApiService) { }
 
   ngOnInit() {
-    console.log(this.api.userRepos)
+    console.log(this.api.full)
   }
   myStyles={
     'background-color':'black',
@@ -19,6 +19,11 @@ export class GitappComponent implements OnInit {
     'text-align':'center',
     'height': '15vh',
     'padding-top': '20px'
+  }
+  body={
+    'height':'auto',
+    'font-size':'1.5em',
+    'font-family':'italics'
   }
   footer={
     'background-color':'black',
