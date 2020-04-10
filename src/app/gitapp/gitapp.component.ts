@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubApiService} from '../github-api.service';
-import{ FormGroup,FormControl} from '@angular/forms'
+import{ FormGroup,FormControl} from '@angular/forms';
+import { Username } from '../username';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -28,9 +30,17 @@ export class GitappComponent implements OnInit {
   }
   // CONSTRACTOR TO RETIEVE ALL INJECTIONS
   constructor(private api:GithubApiService) { }
-
+  users:Username;
   ngOnInit() {
-    console.log(this.api.full)
+    console.log(this.api.getUser())
+    this.api.getUser().subscribe((response:any)=>{
+      this.users=response.login;
+      this.users=response.avatar_url
+      console.log(this.users)
+      console.log()
+    })
+    // this.users=this.api.getUser()
+    
   }
 
   // STYLE SHEETS BINDING
