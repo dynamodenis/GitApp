@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GithubApiService} from '../github-api.service';
 
 @Component({
   selector: 'app-gitapp',
@@ -7,12 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GitappComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api:GithubApiService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    console.log(this.api.userRepos)
   }
-header={
-  'backgound-color':'black',
-  'height':"30vh",
-}
+  myStyles={
+    'background-color':'black',
+    'color':'white',
+    'text-align':'center',
+    'height': '15vh',
+    'padding-top': '20px'
+  }
+  footer={
+    'background-color':'black',
+    'color':'white',
+    'text-align':'center',
+  }
 }
