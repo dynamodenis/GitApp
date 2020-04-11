@@ -28,9 +28,25 @@ export class GitappComponent implements OnInit {
   // CONSTRACTOR TO RETIEVE ALL INJECTIONS
   constructor(private api:GithubApiService) { }
   users:Username;
+  user:any
   ngOnInit() {
-    
+    this.api.getUser().subscribe((res:any)=>{
+      this.user=res
+      console.log(this.user.login)
+    })
+
+    //  console.log(this.user)
   }
+
+
+
+
+
+
+
+
+
+
 
   // STYLE SHEETS BINDING
   myStyles={

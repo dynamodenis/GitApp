@@ -1,37 +1,28 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http'
+import { HttpClient,HttpHeaders} from '@angular/common/http'
 import{ environment} from './../environments/environment';
 import { Username } from './username'
-import { Observable} from 'rxjs'
+import {Observable} from 'rxjs';
+import {apiInterface} from './interface'
 
+  
 @Injectable({
   providedIn: 'root'
 })
 export class GithubApiService {
-  users:Username;
-  
-    clientId='01f5aac10020e9251f16';
-    clientSecret='194626a4360a191f8a4c9aba4f3b47f767e221d4'
-   url="https://api.github.com/users/"
-   user="dynamodenis?access_token="
+    url='https://api.github.com/users/';
+   user='dynamodenis';
+   full=this.url+this.user;
+    secretId='01f5aac10020e9251f16';
+    clientSecret='194626a4360a191f8a4c9aba4f3b47f767e221d4';
 
-   repos='repos/dynamodenis/Address-Book'
-   token=environment.apiKey
-   full:any=this.url+this.user+this.token
-  //  "repository_url": "https://api.github.com/repos/{owner}/{repo}",
-  userRepos=this.url+this.repos
-  
-  constructor(private http:HttpClient) {
-    //  this.users=new Username('','','')
-   }
-   getUsername(){
-    return this.http.get(this.full)
-          // .map(res=>res.json)
-   }
+    constructor(private http:HttpClient){
+    }
 
-
-
-
+    getUser(){
+     
+      return this.http.get(this.full)
+    }
 
 
 
