@@ -1,1 +1,20 @@
-<div *ngIf='user'><h1>{{user.login}}</h1></div>
+<body class="container-fluid">
+    <nav [ngStyle]='myStyles' class="container-fluid">
+        <h2>GitApp User.</h2>
+    </nav>
+    <div class="media" *ngIf='user' class="container">
+        <img src="{{user.avatar_url}}" class="align-self-start mr-3 img-thumbnail github-avatar">
+        <div class="media-body">
+          <h3 class="mt-0">{{user.login}}</h3>
+          <div>
+              <ul class="list-group">
+                <li class="list-group-item"><strong>Usename:</strong>{{user.login}}</li>
+                <li class="list-group-item"><strong>Reposiroties:</strong>{{user.public_repos}}</li>
+                <li class="list-group-item"><strong>Followers:</strong>{{user.followers}}</li>
+                <li class="list-group-item"><strong>Following:</strong>{{user.following}}</li>
+                <li class="list-group-item"><strong>Created:</strong>{{user.created_at}}</li>
+              </ul>
+          </div>
+        </div>
+    </div>
+</body>

@@ -14,7 +14,15 @@ export class UsernameComponent implements OnInit {
     this.api.getUser().subscribe((res:any)=>{
       this.user=res
     })
+  //  console.log(this.user)
+  }
 
-    //  console.log(this.user)
+
+  myStyles={
+    'background-color':'black',
+    'color':'white',
+    'text-align':'center',
+    'height': '15vh',
+    'padding-top': '20px'
   }
 }
