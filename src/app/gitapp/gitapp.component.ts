@@ -25,21 +25,10 @@ export class GitappComponent implements OnInit {
     repository:new FormControl('')
   })
   
-  repoSubmit(){
-    console.log(this.repositories.value)
-  }
   // CONSTRACTOR TO RETIEVE ALL INJECTIONS
   constructor(private api:GithubApiService) { }
   users:Username;
   ngOnInit() {
-    console.log(this.api.getUser())
-    this.api.getUser().subscribe((response:any)=>{
-      this.users=response.login;
-      this.users=response.avatar_url
-      console.log(this.users)
-      console.log()
-    })
-    // this.users=this.api.getUser()
     
   }
 
