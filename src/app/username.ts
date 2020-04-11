@@ -1,3 +1,5 @@
+
+
 export class Username {
-    constructor(public username:string,public repo:string,public image: string ){}
+    constructor(public image:any, public username:string, public repos:string, public followers:any, public following:any, public created:any){}
 }

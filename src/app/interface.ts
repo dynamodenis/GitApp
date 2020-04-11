@@ -1,5 +1,12 @@
 export interface apiInterface{
-    name:any;
+    login:any;
     avatar_url:any;
-    repos:any
+    public_repos:any;
+    followers:any;
+    following:any;
+    created_at:any;
+    name:any;
+    description:any;
+    watchers:any;
+    cloned:any
   }

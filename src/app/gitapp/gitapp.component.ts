@@ -27,10 +27,10 @@ export class GitappComponent implements OnInit {
 
   user:any
   ngOnInit() {
-    this.api.getUser().subscribe((res:any)=>{
-      this.user=res
-      console.log(this.user.login)
-    })
+    // this.api.getUser().subscribe((res:any)=>{
+    //   this.user=res
+    //   console.log(this.user.login)
+    // })
   }
 
 
