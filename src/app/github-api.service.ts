@@ -24,6 +24,10 @@ export class GithubApiService {
       return this.http.get(this.full)
     }
 
+    getRepos(){
+      return this.http.get(this.full+'/repos')
+    }
+
 
 
 

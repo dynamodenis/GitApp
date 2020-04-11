@@ -10,9 +10,13 @@ export class UsernameComponent implements OnInit {
 
   constructor(private api:GithubApiService) { }
   user:any
+  repos:any
   ngOnInit() {
     this.api.getUser().subscribe((res:any)=>{
       this.user=res
+    })
+    this.api.getRepos().subscribe((repos:any)=>{
+      this.repos=repos
     })
   //  console.log(this.user)
   }
