@@ -4,6 +4,7 @@ import{ environment} from './../environments/environment';
 import { Username } from './username'
 import {Observable} from 'rxjs';
 import {apiInterface} from './interface'
+import { map } from 'rxjs/operators';
 
   
 @Injectable({
@@ -12,7 +13,6 @@ import {apiInterface} from './interface'
 export class GithubApiService {
     url='https://api.github.com/users/';
    user='dynamodenis';
-   full=this.url+this.user;
     secretId='01f5aac10020e9251f16';
     clientSecret='194626a4360a191f8a4c9aba4f3b47f767e221d4';
 
@@ -21,13 +21,16 @@ export class GithubApiService {
 
     getUser(){
      
-      return this.http.get(this.full)
+      return this.http.get("https://api.github.com/users/" +this.user)
     }
 
     getRepos(){
-      return this.http.get(this.full+'/repos')
+      return this.http.get("https://api.github.com/users/" +this.user+'/repos')
     }
 
+    updateUser(user:string){
+     return this.user=user;
+    }
 
 
 

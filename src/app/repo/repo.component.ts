@@ -12,4 +12,12 @@ export class RepoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  myStyles={
+    'background-color':'black',
+    'color':'white',
+    'text-align':'center',
+    'height': '15vh',
+    'padding-top': '20px'
+  }
 }

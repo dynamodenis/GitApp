@@ -2,6 +2,10 @@
     <nav [ngStyle]='myStyles' class="container-fluid">
         <h2>GitApp User.</h2>
     </nav>
+    <nav class="navbar navbar-light bg-light form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search Username" aria-label="Search"  [(ngModel)]='username' (keyup)='search()' name='username' > 
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </nav>
     <div class="media" *ngIf='user' class="row">
         <div class="col-md-4">
             <img src="{{user.avatar_url}}" class="align-self-start mr-3 img-thumbnail github-avatar">
@@ -21,14 +25,14 @@
     </div>
    <div class="container">
         <div class="panel panel-default">
-            <div class="pane-heading">
+            <div class="panel-heading">
                 <div class="panel-title"><h3>Reposiroties</h3></div>
             </div>
             <div class="panel-body">
                 <div *ngFor='let repo of repos'>
                     <div class="row">
                         <div class="col-md-9">
-                            <h5><a href="{{repo.html_url}}">{{repo.name}}</a></h5>
+                            <h5><a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a></h5>
                             <p>{{repo.description}}</p>
                         </div>
                         <div class="col-md-3">
