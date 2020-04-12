@@ -27,8 +27,8 @@ export class RepoComponent implements OnInit {
       this.repos=res
     })
     this.api.getRepos().subscribe((repos:any)=>{
-      // this.repos=repos
-      this.repos.push(repos)
+      this.repos=repos
+      // this.repos.push(repos)
     })
   }
 
@@ -41,7 +41,7 @@ export class RepoComponent implements OnInit {
       this.repos=res
     })
     this.api.getRepos().subscribe((repos:any)=>{
-      this.repos.push(repos)
+      this.repos=repos
     })
   }
 
