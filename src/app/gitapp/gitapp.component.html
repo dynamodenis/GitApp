@@ -14,14 +14,16 @@
         <div class='row' [ngStyle]='form' >
             <form action=""  class="col-md-6" [formGroup]='username'>
                 <div  >
+                    <p>To be able to access a user, personal info and view their repositories click here to view them in the user page.</p>
                     <label for="name">Click here to search users:</label><br>
-                    <button routerLink='/user' routerLinkActive='active' type="submit" class="btn btn-success">Submit</button>
+                    <button routerLink='/user' routerLinkActive='active' type="submit" class="btn btn-success">Github User </button>
                 </div>
             </form>
             <form action="" [formGroup]='repositories' class="col-md-6" >
                 <div  >
+                    <p>To plainly access a users repository only without their personal information click below.</p>
                     <label for="repo">Click here to search for repositories:</label><br>
-                    <button routerLink='/repos'  routerLinkActive='active' type="submit" class="btn btn-success">Search</button>
+                    <button routerLink='/repos'  routerLinkActive='active' type="submit" class="btn btn-success">Github Repos</button>
                 </div>
             </form>
 
