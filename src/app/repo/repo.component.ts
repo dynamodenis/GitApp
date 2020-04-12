@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { GithubApiService } from '../github-api.service';
 import { Repo } from '../repo';
 import { Username } from '../username';
@@ -10,10 +10,11 @@ import { Username } from '../username';
   styleUrls: ['./repo.component.css']
 })
 export class RepoComponent implements OnInit {
-  username:Username
-  repos:Repo[]=[
-    new Repo('','','','')
-  ]
+ @Input() username:Username
+  // repos:Repo[]=[
+  //   new Repo('','','','')
+  // ]
+  repos:Repo[]
   constructor(private api:GithubApiService) { }
 
   ngOnInit() {
@@ -27,7 +28,12 @@ export class RepoComponent implements OnInit {
       this.repos=res
     })
     this.api.getRepos().subscribe((repos:any)=>{
-      this.repos=repos
+      // this.repos=repos
+      this.repos[0]=repos.name;
+      this.repos[1]=repos.description;
+      this.repos[2]=repos.watchers;
+      this.repos[3]=repos.forks;
+      this.repos.push(repos)
     })
   }
 
@@ -40,7 +46,12 @@ export class RepoComponent implements OnInit {
       this.repos=res
     })
     this.api.getRepos().subscribe((repos:any)=>{
-      this.repos=repos
+      this.repos[0]=repos.name;
+      this.repos[1]=repos.description;
+      this.repos[2]=repos.watchers;
+      this.repos[3]=repos.forks
+      this.repos.push(repos)
+
     })
   }
 

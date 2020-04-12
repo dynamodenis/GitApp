@@ -8,5 +8,5 @@ export interface apiInterface{
     name:any;
     description:any;
     watchers:any;
-    cloned:any
+    forks:any
   }

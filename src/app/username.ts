@@ -1,5 +1,5 @@
 
 
 export class Username {
-    constructor(public image:any, public username:string, public repos:string, public followers:any, public following:any, public created:any){}
+    constructor(public avatar_url:any, public login:string, public public_repos:string, public followers:any, public following:any, public created_at:any){}
 }

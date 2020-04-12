@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { GithubApiService } from '../github-api.service';
 import { Username } from '../username';
 import { Repo } from '../repo';
+import{apiInterface} from '../interface'
+import { from } from 'rxjs';
 
 
 @Component({
@@ -11,7 +13,7 @@ import { Repo } from '../repo';
 })
 export class UsernameComponent implements OnInit {
   constructor(private api:GithubApiService) { }
-  user:any
+  user:Username
   repos:any
   username:string
 
@@ -24,7 +26,12 @@ export class UsernameComponent implements OnInit {
     this.api.updateUser(this.username)
 
     this.api.getUser().subscribe((res:any)=>{
-      this.user=res
+      this.user.login=res.login;
+      this.user.avatar_url=res.avatar_url;
+      this.user.public_repos=res.public_repos;
+      this.user.followers=res.followers;
+      this.user.following=res.following;
+      this.user.created_at=res.created_at;
     })
     this.api.getRepos().subscribe((repos:any)=>{
       this.repos=repos
