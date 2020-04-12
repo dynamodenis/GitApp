@@ -1,4 +1,12 @@
-# GithubSearch
+# GitApp
+
+Developed by:  Dynamo Denis Mbugua
+
+To view the site on the browser click [here]()
+
+## App Description
+
+This applicaton uses github api to retrieve user information and the repositories on the public package. Gitapp creates a much easier way of how we navigate through github enabling faster retrival of repositories decreasing the time waasted thus increasing production.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
@@ -25,3 +33,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Bugs
+
+One the process of running the project and the applicaton is not working as expected you can reach out and send us the complaint [here](https://github.com/dynamodenis/GitApp/issues/new).
