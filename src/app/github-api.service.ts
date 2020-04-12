@@ -25,7 +25,7 @@ export class GithubApiService {
   repo:Repo;
 
     constructor(private http:HttpClient){
-      this.username=new Username('','','','','','')
+      this.username=new Username('','','','','','','')
     }
 
     getUser(){

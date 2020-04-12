@@ -4,6 +4,7 @@ export interface apiInterface{
     public_repos:any;
     followers:any;
     following:any;
+    email:any;
     created_at:any;
     name:any;
     description:any;

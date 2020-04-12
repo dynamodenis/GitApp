@@ -12,6 +12,7 @@ import { RepoComponent } from './repo/repo.component';
 import { GithubApiService } from './github-api.service'
 import { from } from 'rxjs';
 import { CustomDirective } from './custom.directive';
+import { NullEmailPipe } from './null-email.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CustomDirective } from './custom.directive';
     GitappComponent,
     UsernameComponent,
     RepoComponent,
-    CustomDirective
+    CustomDirective,
+    NullEmailPipe
   ],
   imports: [
     BrowserModule,
