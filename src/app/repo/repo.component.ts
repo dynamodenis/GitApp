@@ -11,10 +11,9 @@ import { Username } from '../username';
 })
 export class RepoComponent implements OnInit {
  @Input() username:Username
-  // repos:Repo[]=[
-  //   new Repo('','','','')
-  // ]
-  repos:Repo[]
+  repos:Repo[]=[
+    new Repo('','','','')
+  ]
   constructor(private api:GithubApiService) { }
 
   ngOnInit() {
@@ -29,10 +28,6 @@ export class RepoComponent implements OnInit {
     })
     this.api.getRepos().subscribe((repos:any)=>{
       // this.repos=repos
-      this.repos[0]=repos.name;
-      this.repos[1]=repos.description;
-      this.repos[2]=repos.watchers;
-      this.repos[3]=repos.forks;
       this.repos.push(repos)
     })
   }
@@ -46,12 +41,7 @@ export class RepoComponent implements OnInit {
       this.repos=res
     })
     this.api.getRepos().subscribe((repos:any)=>{
-      this.repos[0]=repos.name;
-      this.repos[1]=repos.description;
-      this.repos[2]=repos.watchers;
-      this.repos[3]=repos.forks
       this.repos.push(repos)
-
     })
   }
 
