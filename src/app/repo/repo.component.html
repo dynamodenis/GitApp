@@ -1,8 +1,8 @@
 <body class="container-fluid">
     <nav [ngStyle]='myStyles' class="container-fluid">
         <h2>GitApp Reposiroties.</h2>
-        <button class="label label-default btn btn-outline-primary nav" routerLink='/home'  routerLinkActive='active'>Home</button> <span></span>
-        <button class=" label-default btn btn-outline-primary nav" routerLink='/user'  routerLinkActive='active'>Users</button>
+        <button class="label label-default btn btn-outline-primary " routerLink='/home'  routerLinkActive='active'>Home</button> <span></span>
+        <button class=" label-default btn btn-outline-primary " routerLink='/user'  routerLinkActive='active'>Users</button>
     </nav> 
     <nav class="navbar navbar-light bg-light form-inline">
           <input  class="form-control mr-sm-2" type="search" placeholder="Search Username" aria-label="Search"  [(ngModel)]='username' (keyup)='search()' name='username' > <span>Type the github username to retrieve their repositories.</span>
