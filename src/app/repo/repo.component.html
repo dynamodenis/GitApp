@@ -1,9 +1,11 @@
 <body class="container-fluid">
     <nav [ngStyle]='myStyles' class="container-fluid">
-        <h2>GitApp User.</h2>
+        <h2>GitApp Reposiroties.</h2>
+        <button class="label label-default btn btn-outline-primary nav" routerLink='/home'  routerLinkActive='active'>Home</button> <span></span>
+        <button class=" label-default btn btn-outline-primary nav" routerLink='/user'  routerLinkActive='active'>Users</button>
     </nav> 
     <nav class="navbar navbar-light bg-light form-inline">
-          <input  class="form-control mr-sm-2" type="search" placeholder="Search Username" aria-label="Search"  [(ngModel)]='username' (keyup)='search()' name='username' > 
+          <input  class="form-control mr-sm-2" type="search" placeholder="Search Username" aria-label="Search"  [(ngModel)]='username' (keyup)='search()' name='username' > <span>Type the github username to retrieve their repositories.</span>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)=submit()>Search</button>
     </nav>
     <div class="container">

@@ -18,31 +18,38 @@ export class UsernameComponent implements OnInit {
   username:string
 
   ngOnInit() {
-
+    console.log(this.api)
   }
 
-  search(){
+  search(){ //user
     console.log(this.username)
     this.api.updateUser(this.username)
 
     this.api.getUser().subscribe((res:any)=>{
-      this.user.login=res.login;
-      this.user.avatar_url=res.avatar_url;
-      this.user.public_repos=res.public_repos;
-      this.user.followers=res.followers;
-      this.user.following=res.following;
-      this.user.created_at=res.created_at;
+      // this.user.login=res.login;
+      // this.user.avatar_url=res.avatar_url;
+      // this.user.public_repos=res.public_repos;
+      // this.user.followers=res.followers;
+      // this.user.following=res.following;
+      // this.user.created_at=res.created_at;
+      this.user=res
     })
     this.api.getRepos().subscribe((repos:any)=>{
       this.repos=repos
     })
   }
 
-  submit(){
+  submit(){ //repository
      console.log(this.username)
     this.api.updateUser(this.username)
 
     this.api.getUser().subscribe((res:any)=>{
+      // this.user.login=res.login;
+      // this.user.avatar_url=res.avatar_url;
+      // this.user.public_repos=res.public_repos;
+      // this.user.followers=res.followers;
+      // this.user.following=res.following;
+      // this.user.created_at=res.created_at;
       this.user=res
     })
     this.api.getRepos().subscribe((repos:any)=>{

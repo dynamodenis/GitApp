@@ -12,14 +12,13 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class GithubApiService {
-  //   url='https://api.github.com/users/';
-  //  user='dynamodenis';
-  //   secretId='01f5aac10020e9251f16';
-  //   clientSecret='194626a4360a191f8a4c9aba4f3b47f767e221d4';
-
-  url='https://api.github.com/users/';
-  user='dynamodenis';
-  apikey=environment.apiKey
+     client_id=environment.client_id;
+     client_secret=environment.client_secret;
+     access_token=environment.access_token;
+     CALLBACK='http://localhost:4200/user'
+     url='https://api.github.com/users/';
+     user='dynamodenis';
+  // apikey=environment.apiKey
 
   username:Username;
   repo:Repo;
@@ -30,11 +29,11 @@ export class GithubApiService {
 
     getUser(){
      
-      return this.http.get<apiInterface>("https://api.github.com/users/" +this.user)
+      return this.http.get<apiInterface>("https://api.github.com/users/" +this.user+"?"+this.access_token).pipe(map(res=>res))
     }
 
     getRepos(){
-      return this.http.get<apiInterface>("https://api.github.com/users/" +this.user+'/repos')
+      return this.http.get<apiInterface>("https://api.github.com/users/" +this.user+'/repos'+"?"+this.access_token).pipe(map(res=>res))
     }
 
     updateUser(user:string){
