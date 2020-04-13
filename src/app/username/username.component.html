@@ -35,7 +35,7 @@
             </div>
             <div class="panel-body">
                 <div *ngFor='let repo of repos' appCustom>
-                    <div class="row">
+                    <div class="row repos">
                         <div class="col-md-9">
                             <h5><a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a></h5>
                             <p>{{repo.description}}</p>
